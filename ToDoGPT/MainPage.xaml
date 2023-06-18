@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoGPT.MainPage">
+
+    <!--Ask Dr. Eetemadi:
+        How to add UI element via code
+        How to bind an observable table from database
+        How to bind multiple object property to TextCell.Text and Detail
+    -->
+    <ScrollView
+            BackgroundColor="#7F4FAD">
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="25,15"
+            VerticalOptions="StartAndExpand">
+
+            <Label Text="Ongoing Tasks" FontSize="Medium">
+                <Label.Shadow>
+                    <Shadow Brush="black" Offset="20,20" Radius="40" Opacity="0.8" />
+                </Label.Shadow>
+            </Label>
+            
+            <ListView x:Name="lvOngoings" ItemSelected="lvOngoings_ItemSelected" 
+                      VerticalOptions="Start" SeparatorColor="#300E51">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ListViewText}" 
+                                  TextColor="White"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Label Text="Completed Tasks" FontSize="Medium">
+                <Label.Shadow>
+                    <Shadow Brush="black" Offset="20,20" Radius="40" Opacity="0.8" />
+                </Label.Shadow>
+            </Label>
+            
+            <ListView x:Name="lvCompleted" ItemSelected="lvOngoings_ItemSelected" 
+                      VerticalOptions="StartAndExpand" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ListViewText}" Detail="{Binding ListViewDetailCompleted}"
+                                  TextColor="#AA849A" DetailColor="#AA849A"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

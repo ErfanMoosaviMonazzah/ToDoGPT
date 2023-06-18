@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoGPT.UserPrefs"
+             Title="UserPrefs">
+    <VerticalStackLayout BackgroundColor="#7F4FAD"
+            Spacing="5"
+            Padding="25,15">
+        <Label Text="OpenAI API Key:"/>
+        <Entry x:Name="entOpenAIAPI" 
+               Placeholder="Enter your key..." PlaceholderColor="#BFA5EB"/>
+        <Label Text="Planning Prompt:"/>
+        <Entry x:Name="entPromptPlanning"
+               Placeholder="Suggest an efficient plan for me to do my tasks"
+               PlaceholderColor="#BFA5EB"/>
+        <Label Text="Resource Prompt:"/>
+        <Entry x:Name="entPromptResource"
+               Placeholder="What resources can help me do these tasks?"/>
+        <Label Text="Category Prompt:"/>
+        <Entry x:Name="entPromptCategory"
+               Placeholder="Categorize my tasks based on their similarity"
+               PlaceholderColor="#BFA5EB"/>
+        <Button x:Name="btnSave" Text="Save" Clicked="btnSave_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

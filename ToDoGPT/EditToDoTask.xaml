@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoGPT.EditToDoTask"
+             Title="Edit Task">
+    <VerticalStackLayout BackgroundColor="#7F4FAD"
+            Spacing="5"
+            Padding="25,15">
+        <Label Text="Title:"/>
+        <Entry x:Name="entTitle" Placeholder="Enter a title for the task"
+               PlaceholderColor="#BFA5EB"/>
+        <Label Text="Due Date:"/>
+        <DatePicker x:Name="dateDue"/>
+        <HorizontalStackLayout>
+            <Label Text="Completed?" VerticalTextAlignment="Center"/>
+            <CheckBox x:Name="cbCompleted"/>
+        </HorizontalStackLayout>
+        <Label Text="Category:"/>
+        <Entry x:Name="entCategory"/>
+        <Label Text="Resources:"/>
+        <Editor x:Name="editResources"/>
+        <HorizontalStackLayout Spacing="10" Margin="0, 10" HorizontalOptions="Center">
+            <Button x:Name="btnSave" Text="Edit Task" Clicked="btnSave_Clicked"/>
+            <Button x:Name="btnDel" Text="Delete Task" Clicked="btnDel_Clicked"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

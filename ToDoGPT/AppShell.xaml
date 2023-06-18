@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ToDoGPT.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ToDoGPT"
+    Shell.FlyoutBehavior="Disabled"
+    BackgroundColor="#5600A7"
+    FlyoutBackgroundColor="#5600A7">
+
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab>
+            <ShellContent Title="Main Page"
+                          ContentTemplate="{DataTemplate local:MainPage}" />
+            <ShellContent Title="New Task"
+                          ContentTemplate="{DataTemplate local:AddToDoTask}" />
+            <ShellContent Title="ChatGPT" Route="chatgpt"
+                          ContentTemplate="{DataTemplate local:ChatGPT}" />
+            <ShellContent Title="Plan" Route="plan"
+                          ContentTemplate="{DataTemplate local:SeePlan}" />
+
+            <ShellContent Title="Preferences" Route="preferences"
+                          ContentTemplate="{DataTemplate local:UserPrefs}" />
+        </Tab>
+    </FlyoutItem>
+
+
+</Shell>
